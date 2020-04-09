@@ -1,0 +1,10 @@
+<h1>All About The Mission</h1>
+<br>
+<div> Mission Name: <%= @mission.name %></div>
+<div> Mission Scientist: <%= link_to @mission.scientist.name, scientist_path(@mission.scientist) %></div>
+<div> Mission Planet: <%= link_to @mission.planet.name, planet_path(@mission.planet) %></div>
+<br>
+
+<%= link_to "Back to All Missions", missions_path %>
+<br>
+<%= link_to "Abort Mission", about_path %>

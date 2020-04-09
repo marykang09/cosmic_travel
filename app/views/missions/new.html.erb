@@ -1,0 +1,18 @@
+<h1>Create a New Mission!</h1>
+<% if @mission.errors %>
+    <%@mission.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %>
+<% end %>
+<br>
+
+<%= form_for @mission do |m| %>
+<%= m.label :scientist_id %>
+<%= m.collection_select :scientist_id, Scientist.all, :id, :name %>
+<%= m.label :planet_id %>
+<%= m.collection_select :planet_id, Planet.all, :id, :name %>
+<%= m.label :name %>
+<%= m.text_field :name %>
+<%= m.submit 'Create Mission'%>
+<% end %>
+

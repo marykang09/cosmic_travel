@@ -15,5 +15,10 @@
   <%= @planet.nearest_star %>
 </p>
 
+<p>
+  <strong>Scientist Visit Count:</strong>
+  <%= @planet.scientists_count %>
+</p>
+
 <%= link_to 'Edit', edit_planet_path(@planet) %> |
 <%= link_to 'Back', planets_path %>

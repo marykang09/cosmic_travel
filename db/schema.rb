@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_201452) do
+ActiveRecord::Schema.define(version: 2020_04_09_011406) do
+
+  create_table "missions", force: :cascade do |t|
+    t.integer "scientist_id"
+    t.integer "planet_id"
+    t.string "name"
+  end
 
   create_table "planets", force: :cascade do |t|
     t.string "name"
@@ -18,6 +24,11 @@ ActiveRecord::Schema.define(version: 2020_03_04_201452) do
     t.string "nearest_star"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scientists", force: :cascade do |t|
+    t.string "name"
+    t.string "field_of_study"
   end
 
 end

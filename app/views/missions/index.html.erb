@@ -1,0 +1,17 @@
+<h1>All Missions</h1>
+
+<h2>
+<% @missions.each do |m| %>
+<ul>
+Mission: <%= link_to m.name, mission_path(m) %>
+Scientist: <%= link_to m.scientist_id, scientist_path(m.scientist_id) %>
+Planet: <%= link_to m.planet_id, planet_path(m.planet_id) %>
+</ul>
+<% end %>
+</h2>
+
+<p>
+<%= link_to 'Create New Mission', new_mission_path %>
+<br>
+<%= link_to 'Start Over', about_path %>
+</p>

@@ -1,0 +1,16 @@
+<h1>All About The Scientist</h1>
+<br>
+<div> Scientist Name: <%= @scientist.name %></div>
+<div> Field of Study: <%= @scientist.field_of_study %></div>
+<div> Mission Count: <%= @scientist.mission_count %></div>
+<div> Mission Detail: 
+<% @scientist.missions.each do |m| %>
+<ol>Mission Name: <%= link_to m.name, mission_path(m.id)%> - Planet Visited: <%= link_to m.planet.name, planet_path(m.planet.id) %></ol>
+<% end %>
+</div>
+<br>
+<%= link_to "Edit this Scientist", edit_scientist_path(@scientist) %>
+<br>
+<%= link_to "Back to All Scientists", scientists_path %>
+<br>
+<%= link_to "Start Over", about_path %>
