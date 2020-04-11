@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1> Planet Details </h1>
 <p>
   <strong>Name:</strong>
   <%= @planet.name %>
@@ -20,5 +20,14 @@
   <%= @planet.scientists_count %>
 </p>
 
+<p>
+  <strong>Scientists Who Visited:</strong>
+  <% @planet.scientists.each do |s|%>
+  <ul><%= link_to s.name, scientist_path(s)  %></ul>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_planet_path(@planet) %> |
-<%= link_to 'Back', planets_path %>
+<%= link_to 'Go to All Planets', planets_path %> |
+<%= link_to 'Go to All Missions', missions_path %> |
+<%= link_to 'Go to All Scientists', scientists_path %>
